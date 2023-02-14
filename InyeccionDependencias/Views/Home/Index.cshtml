@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Usuario>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <form asp-action="Create" method="post">
+        <input name="name" placeholder="Nombre"/>
+       <input name="lastname" placeholder="Apellido"/>
+      <input type="submit" />
+    </form>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>LastName</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.LastName</td>
+            </tr>
+        }
+    </tbody>
+</table>
